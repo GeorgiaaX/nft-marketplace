@@ -18,6 +18,36 @@ const FollowerTab = () => {
   const [following, setFollowing] = useState(false);
   const [news, setNews] = useState(false);
 
+  const openPopular = () => {
+    if(!popular) {
+        setPopular(true);
+        setFollowing(false);
+        setNews(false);
+    } else {
+        setPopular(false);
+    }
+  }
+
+  const openFollowing = () => {
+    if(!following) {
+        setPopular(false);
+        setFollowing(true);
+        setNews(false);
+    } else {
+        setFollowing(false);
+    }
+  }
+
+  const openNews = () => {
+    if(!news) {
+        setPopular(false);
+        setFollowing(false);
+        setNews(true);
+    } else {
+        setNews(false);
+    }
+  }
+
   return (
     <div className={Style.followerTab}>
       <div className={Style.followerTab_title}>

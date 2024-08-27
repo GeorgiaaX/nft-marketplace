@@ -99,7 +99,7 @@
     box-shadow: var(--box-shadow);
 }
 
-/*
+
 
 .daysComponent_box_img_img {
     width: 100%;
@@ -112,6 +112,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
+
+/*
 
 .daysComponent_box_img_1,
 .daysComponent_box_img_2,
