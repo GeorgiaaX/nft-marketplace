@@ -62,7 +62,8 @@
     .collection_box{
         width: 90%;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 10rem;
+        margin-bottom: 2rem;
     }
 
     .collection_collections_btn button{

@@ -76,11 +76,11 @@
 
 .daysComponent {
     width: 100%;
-    max-width: 500px; /* Limit the width of the card */
+    max-width: 500px;
     border-radius: 1rem;
     transition: all 0.3s ease-in;
     cursor: pointer;
-    overflow: hidden; /* Ensure the content does not overflow */
+    overflow: hidden;
 }
 
 .daysComponent:hover {
@@ -157,6 +157,6 @@
     }
 
     .daysComponent_box_title {
-        padding: 1rem; /* Adjust padding for smaller screens */
+        padding: 1rem;
     }
 }

@@ -10,17 +10,17 @@ const DaysComponent = () => {
     <div className={Style.daysComponent}>
       <div className={Style.daysComponent_box}>
         <div className={Style.daysComponent_box_img}>
-          {/* <Image
+          <Image
             src={images.creatorbackground1}
             className={Style.daysComponent_box_img_img}
             alt="profile background"
             width={500}
             height={300}
-          /> */}
+          />
         </div>
 
         <div className={Style.daysComponent_box_profile}>
-          {/* <Image
+          <Image
             src={images.creatorbackground2}
             className={Style.daysComponent_box_img_1}
             alt="profile collection"
@@ -40,7 +40,7 @@ const DaysComponent = () => {
             alt="profile collection"
             width={200}
             height={200}
-          /> */}
+          />
         </div>
 
         <div className={Style.daysComponent_box_title}>
