@@ -62,7 +62,7 @@
     .collection_box{
         width: 90%;
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 2rem;
     }
 
     .collection_collections_btn button{
@@ -78,7 +78,7 @@
     .collection_box{
         width: 90%;
         grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
+        gap: 2rem;
     }
 
     .collection_collections_btn button{

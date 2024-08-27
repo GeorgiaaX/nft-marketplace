@@ -16,7 +16,7 @@ const DaysComponent = () => {
             alt="profile background"
             width={500}
             height={300}
-            objectFit="covers"
+            objectFit="cover"
           />
         </div>
 
@@ -27,7 +27,7 @@ const DaysComponent = () => {
             alt="profile"
             width={200}
             height={200}
-            objectFit="covers"
+            objectFit="cover"
           />
           <Image
             src={images.creatorbackground2}
@@ -35,7 +35,7 @@ const DaysComponent = () => {
             alt="profile"
             width={200}
             height={200}
-            objectFit="covers"
+            objectFit="cover"
           />
           <Image
             src={images.creatorbackground2}
@@ -43,7 +43,7 @@ const DaysComponent = () => {
             alt="profile"
             width={200}
             height={200}
-            objectFit="covers"
+            objectFit="cover"
           />
         </div>
 
