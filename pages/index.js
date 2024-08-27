@@ -10,7 +10,10 @@ import {
   Category,
   Filter,
   NFTCard,
-  Collection
+  Collection,
+  AudioLive,
+  Slider,
+  FollowerTab
 } from "@/components/componentsindex";
 
 const Home = () => {
@@ -20,9 +23,20 @@ const Home = () => {
       <Service />
       <BigNFTSlider />
       <Title
+        heading="Audio Collection"
+        paragraph="Explore the NFTs in the most featured categories."
+      />
+      <AudioLive />
+      <Title
         heading="New Collection"
         paragraph="Explore the NFTs in the most featured categories."
       />
+      <Title
+        heading="Explore NFTs"
+        paragraph="Discover the most outstanding NFTs in all topics of life"
+      />
+      <FollowerTab />
+      <Slider />
       <Collection />
       <Title
         heading="Featured NFTs"
