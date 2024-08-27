@@ -78,7 +78,7 @@
 
 
 
-/* 
+
 
 
 
@@ -93,9 +93,13 @@
     overflow: hidden;
 }
 
+
+
 .daysComponent:hover {
     box-shadow: var(--box-shadow);
 }
+
+/*
 
 .daysComponent_box_img_img {
     width: 100%;
