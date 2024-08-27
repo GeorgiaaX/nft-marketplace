@@ -149,9 +149,6 @@
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 768px) {
-    .daysComponentbox{
-        min-height: 200px;
-    }
     .daysComponent_box_title_info {
         flex-direction: column;
         gap: 2rem;
