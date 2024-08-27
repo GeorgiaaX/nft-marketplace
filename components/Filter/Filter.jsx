@@ -14,7 +14,6 @@ import { MdVerified } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 
 import Style from "./Filter.module.css";
-import images from "../../img";
 
 const Filter = () => {
   const [filter, setFilter] = useState(true);
