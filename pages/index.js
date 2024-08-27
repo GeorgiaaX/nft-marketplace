@@ -10,7 +10,7 @@ import {
   Category,
   Filter,
   NFTCard,
-  // Collection,
+  Collection,
   AudioLive,
   Slider,
   FollowerTab
