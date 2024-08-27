@@ -37,7 +37,7 @@ const Home = () => {
       />
       <FollowerTab />
       <Slider />
-      {/* <Collection /> */}
+      <Collection />
       <Title
         heading="Featured NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life"
