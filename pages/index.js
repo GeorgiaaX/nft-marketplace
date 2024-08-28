@@ -27,15 +27,7 @@ const Home = () => {
         paragraph="Explore the NFTs in the most featured categories."
       />
       <AudioLive />
-      <Title
-        heading="New Collection"
-        paragraph="Explore the NFTs in the most featured categories."
-      />
       <FollowerTab />
-      <Title
-        heading="Explore NFTs"
-        paragraph="Discover the most outstanding NFTs in all topics of life"
-      />
       <Slider />
       <Collection />
       <Title
