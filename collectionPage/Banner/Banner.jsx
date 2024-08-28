@@ -22,7 +22,7 @@ const Banner = ({bannerImage}) => {
                 className={Style.banner_img_mobile_img}
                 objectFit="cover"
                 alt="background"
-                width={375}
+                width={900}
                 height={300}/>
             </div>
         </div>
