@@ -13,7 +13,7 @@ import {
   Collection,
   AudioLive,
   Slider,
-  FollowerTab
+  FollowerTab,
 } from "@/components/componentsindex";
 
 const Home = () => {
@@ -31,11 +31,11 @@ const Home = () => {
         heading="New Collection"
         paragraph="Explore the NFTs in the most featured categories."
       />
+      <FollowerTab />
       <Title
         heading="Explore NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life"
       />
-      <FollowerTab />
       <Slider />
       <Collection />
       <Title
