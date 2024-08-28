@@ -9,6 +9,7 @@ const Banner = ({bannerImage}) => {
             <div className={Style.banner_img}>
                 <Image 
                 src={bannerImage}
+                className={Style.banner_img_img}
                 objectFit="cover"
                 alt="background"
                 width={1600}
@@ -18,6 +19,7 @@ const Banner = ({bannerImage}) => {
             <div className={Style.banner_img_mobile}>
             <Image 
                 src={bannerImage}
+                className={Style.banner_img_mobile_img}
                 objectFit="cover"
                 alt="background"
                 width={375}
