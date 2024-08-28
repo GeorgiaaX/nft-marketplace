@@ -12,7 +12,7 @@ import {
   NFTCard,
   Collection,
   AudioLive,
-  // Slider,
+  Slider,
   FollowerTab,
   Brand,
   Video
@@ -30,7 +30,7 @@ const Home = () => {
       />
       <AudioLive />
       <FollowerTab />
-      {/* <Slider /> */}
+      <Slider />
       <Collection />
       <Title
         heading="Featured NFTs"
