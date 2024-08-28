@@ -3,15 +3,14 @@ import Image from "next/image";
 import { MdVerified } from "react-icons/md";
 
 import Style from "./DaysComponent.module.css";
-import images from "../../../img";
 
-const DaysComponent = () => {
+const DaysComponent = ({i, el}) => {
   return (
     <div className={Style.daysComponent}>
       <div className={Style.daysComponent_box}>
         <div className={Style.daysComponent_box_img}>
           <Image
-            src={images.creatorbackground1}
+            src={el.background}
             className={Style.daysComponent_box_img_img}
             alt="profile background"
             width={500}
@@ -21,21 +20,21 @@ const DaysComponent = () => {
 
         <div className={Style.daysComponent_box_profile}>
           <Image
-            src={images.creatorbackground2}
+            src={el.background}
             className={Style.daysComponent_box_img_1}
             alt="profile collection"
             width={200}
             height={200}
           />
           <Image
-            src={images.creatorbackground2}
+            src={el.background}
             className={Style.daysComponent_box_img_2}
             alt="profile collection"
             width={200}
             height={200}
           />
           <Image
-            src={images.creatorbackground2}
+            src={el.background}
             className={Style.daysComponent_box_img_3}
             alt="profile collection"
             width={200}
@@ -48,7 +47,7 @@ const DaysComponent = () => {
           <div className={Style.daysComponent_box_title_info}>
             <div className={Style.daysComponent_box_title_info_profile}>
               <Image
-                src={images.user1}
+                src={el.user}
                 className={Style.daysComponent_box_title_info_profile_img}
                 alt="profile collection"
                 width={30}
