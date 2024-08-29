@@ -11,7 +11,7 @@ const Discover = () => {
       link: "collection"
     }, {
       name: "Search",
-      link: "search"
+      link: "searchPage"
     }, {
       name: "Author Profile",
       link: "author"
@@ -27,7 +27,6 @@ const Discover = () => {
     }
   ];
 
-  // Discover Navigation menu
   return (
     <div>
       {discover.map((el, i) => (
