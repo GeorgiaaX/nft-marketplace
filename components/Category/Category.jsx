@@ -60,8 +60,8 @@ const Category = () => {
               src={images.creatorbackground1}
               className={Style.category_box_img}
               alt="Background Image"
-              width={250}  /* Desktop width */
-              height={300}  /* Desktop height */
+              width={300}
+              height={200} 
               style={{ objectFit: "cover" }}
             />
             <div className={Style.category_box_title}>
