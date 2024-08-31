@@ -105,6 +105,7 @@ const NFTDetailsImg = () => {
             </p>
             <p>
               <small>Token Id</small>
+              <br></br>
               34736734637
             </p>
           </div>
