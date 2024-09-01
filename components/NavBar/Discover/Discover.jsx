@@ -21,6 +21,12 @@ const Discover = () => {
     }, {
       name: "Account Settings",
       link: "account"
+    },  {
+      name: "Upload NFT",
+      link: "upload-nft"
+    },  {
+      name: "Connect Wallet",
+      link: "connect-wallet"
     }, {
       name: "Blog",
       link: "blog"
