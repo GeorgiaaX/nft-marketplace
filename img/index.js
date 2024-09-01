@@ -43,9 +43,18 @@ import musiceWave from "./musicwave.png";
 import update from "./update.png";
 import earn from "./eran.png";
 import upload from "./upload.png"
+import provider1 from "./metamaskLogo.png";
+import provider2 from "./walletconnect.png";
+import provider3 from "./FortmaticLogo.png";
+import provider4 from "./coinbasewalletLogo.png";
+
 
 export default {
   collection,
+  provider1,
+  provider2,
+  provider3,
+  provider4,
   update,
   upload,
   musiceWave,

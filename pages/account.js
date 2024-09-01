@@ -4,7 +4,7 @@ import {useDropzone} from "react-dropzone";
 
 import Style from "../styles/account.module.css";
 import images from "../img";
-import Form from "../AccountPage/Form/Form";
+import Form from "../accountPage/Form/Form";
 
 const Account = () => {
   const [fileUrl, setFileUrl] = useState(null);

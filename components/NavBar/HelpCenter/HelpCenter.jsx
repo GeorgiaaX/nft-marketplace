@@ -8,10 +8,10 @@ const HelpCenter = () => {
   const helpCenter = [
     {
       name: "About",
-      link: "about"
+      link: "aboutUs"
     }, {
       name: "Contact Us",
-      link: "contact-us"
+      link: "contactus"
     }, {
       name: "Sign Up",
       link: "sign-up"
