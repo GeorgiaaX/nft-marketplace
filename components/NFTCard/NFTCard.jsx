@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BsImages } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 import Style from "./NFTCard.module.css";
 import images from "../../img";
 
-const NFTCard = () => {
-  const featureArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const NFTCard = ({ NFTData }) => {
+  // const featureArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const [like, setLike] = useState(true);
 
@@ -21,11 +22,12 @@ const NFTCard = () => {
 
   return (
     <div className={Style.NFTCard}>
-      {featureArray.map((el, i) => (
-        <div className={Style.NFTCard_box} key={i + 1}>
+      {NFTData.map((el, i) => (
+        <Link href={{ pathname: "/nftDetails", query: el}}>
+           <div className={Style.NFTCard_box} key={i + 1}>
           <div className={Style.NFTCard_box_img}>
             <Image
-              src={images.nft_image_1}
+              src={el.image}
               alt="NFT images"
               width={600}
               height={600}
@@ -61,13 +63,13 @@ const NFTCard = () => {
           <div className={Style.NFTCard_box_update_details}>
             <div className={Style.NFTCard_box_update_details_price}>
               <div className={Style.NFTCard_box_update_details_price_box}>
-                <h4>Clone #17373</h4>
+                <h4>{el.name} #{el.tokenId}</h4>
                 <div className={Style.NFTCard_box_update_details_price_box_box}>
                   <div
                     className={Style.NFTCard_box_update_details_price_box_bid}
                   >
                     <small> Current Bid</small>
-                    <p>1.000ETH</p>
+                    <p>{el.price} ETH</p>
                   </div>
 
                   <div
@@ -83,6 +85,8 @@ const NFTCard = () => {
             </div>
           </div>
         </div>
+        </Link>
+       
       ))}
     </div>
   );

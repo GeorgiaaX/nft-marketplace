@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { GrClose } from "react-icons/gr";
 import {
   TiSocialFacebook,
@@ -16,7 +17,7 @@ import Style from "./SideBar.module.css";
 import images from "../../../img";
 import Button from "../../Button/Button";
 
-const SideBar = ({ setOpenSideMenu }) => {
+const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
 
@@ -71,24 +72,24 @@ const SideBar = ({ setOpenSideMenu }) => {
   ];
 
   const openDiscoverMenu = () => {
-    if(!openDiscover) {
-      setOpenDiscover(true)
+    if (!openDiscover) {
+      setOpenDiscover(true);
     } else {
-      setOpenDiscover(false)
+      setOpenDiscover(false);
     }
-  }
+  };
 
   const openHelpMenu = () => {
-    if(!openHelp) {
-      setOpenHelp(true)
+    if (!openHelp) {
+      setOpenHelp(true);
     } else {
-      setOpenHelp(false)
+      setOpenHelp(false);
     }
-  }
+  };
 
   const closeSideBar = () => {
-    setOpenSideMenu(false)
-  }
+    setOpenSideMenu(false);
+  };
 
   return (
     <div className={Style.sideBar}>
@@ -165,8 +166,14 @@ const SideBar = ({ setOpenSideMenu }) => {
       </div>
 
       <div className={Style.sideBar_button}>
-        <Button btnName="Create" handleClick={() => {}}/>
-        <Button btnName="Connect Wallet" handleClick={() => {}}/>
+        {currentAccount == "" ? (
+          <Button
+            btnName="Connect Wallet"
+            handleClick={() => connectWallet()}
+          />
+        ) : (
+            <Button btnName="Create" handleClick={() => router.push("/upload-nft")} />
+        )}
       </div>
     </div>
   );

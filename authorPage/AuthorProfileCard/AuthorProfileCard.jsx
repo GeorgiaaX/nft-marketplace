@@ -18,7 +18,7 @@ import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex";
 
-const AuthorProfileCard = () => {
+const AuthorProfileCard = ({ currentAccount }) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
 
@@ -69,8 +69,8 @@ const AuthorProfileCard = () => {
           </h2>
 
           <div className={Style.authorProfileCard_box_info_address}>
-            <input type="text" value="0x434324535334..32433424" id="myInput" readOnly/>
-            <FiCopy
+            <input type="text" value={currentAccount} id="myInput" readOnly style={{width: "100%" }}/>
+            {" "}<FiCopy
               onClick={() => copyAddress()}
               className={Style.authorProfileCard_box_info_address_icon}
             />

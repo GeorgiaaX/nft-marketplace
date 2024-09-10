@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
@@ -10,6 +9,10 @@ import Style from "./NavBar.module.css";
 import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
 import { Button } from "../componentsindex";
 import images from "../../img";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+import { NFTMarketplaceContext } from "@/Context/NFTMarketplaceContext";
 
 const NavBar = () => {
   const [discover, setDiscover] = useState(false);
@@ -17,6 +20,8 @@ const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
+ const router = useRouter();
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -37,7 +42,7 @@ const NavBar = () => {
       setProfile(false);
     }
   };
-  
+
   const openNotification = () => {
     if (!notification) {
       setDiscover(false);
@@ -48,25 +53,30 @@ const NavBar = () => {
       setNotification(false);
     }
   };
-  
+
   const openProfile = () => {
-      if(!profile) {
-          setDiscover(false);
-          setHelp(false);
-          setNotification(false);
-          setProfile(true);
-      } else {
-          setProfile(false);
-      }
-  }
-  
-  const openSideBar = () => {
-      if(!openSideMenu) {
-          setOpenSideMenu(true)
-      } else {
-          setOpenSideMenu(false);
-      }
+    if (!profile) {
+      setDiscover(false);
+      setHelp(false);
+      setNotification(false);
+      setProfile(true);
+    } else {
+      setProfile(false);
+    }
   };
+
+  const openSideBar = () => {
+    if (!openSideMenu) {
+      setOpenSideMenu(true);
+    } else {
+      setOpenSideMenu(false);
+    }
+  };
+
+  //SMART Contract section
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
+
+
 
   return (
     <div className={Style.navbar}>
@@ -78,6 +88,7 @@ const NavBar = () => {
               alt="NFT MARKETPLACE"
               width={100}
               height={100}
+              onClick={() => router.push("/")}
             />
           </div>
           <div className={Style.navbar_container_left_box_input}>
@@ -133,7 +144,13 @@ const NavBar = () => {
 
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName="Create" handleClick={() => {}} />
+            {currentAccount == "" ? (
+              <Button btnName="Connect" handleClick={() => connectWallet()} />
+            ) : (
+
+                <Button btnName="Create" handleClick={() => router.push("/upload-nft")} />
+
+            )}
           </div>
 
           {/* USER PROFILE */}
@@ -147,7 +164,7 @@ const NavBar = () => {
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
               />
-              {profile && <Profile />}
+              {profile && <Profile currentAccount={currentAccount}/>}
             </div>
           </div>
 
@@ -163,10 +180,14 @@ const NavBar = () => {
 
       {/* SIDEBAR COMPONENT (MOBILE ONLY) */}
       {openSideMenu && (
-            <div className={Style.sideBar}>
-                <SideBar setOpenSideMenu={setOpenSideMenu} />
-            </div>
-        )}
+        <div className={Style.sideBar}>
+          <SideBar
+            setOpenSideMenu={setOpenSideMenu}
+            currentAccount={currentAccount}
+            connectWallet={connectWallet}
+          />
+        </div>
+      )}
     </div>
   );
 };

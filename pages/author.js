@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import Style from "../styles/author.module.css";
 import { Banner, NFTCardTwo } from "../collectionPage/Collectionindex";
@@ -10,6 +10,8 @@ import {
   AuthorNFTCardBox,
 } from "../authorPage/componentsIndex";
 import images from "../img";
+
+import { NFTMarketplaceContext } from "@/Context/NFTMarketplaceContext";
 
 const author = () => {
   const followerArray = [
@@ -36,10 +38,27 @@ const author = () => {
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
+  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(NFTMarketplaceContext);
+
+  const [nfts, setNfts] = useState([]);
+  const [myNfts, setMyNfts] = useState([]);
+
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
+      setNfts(items);
+    })
+  }, [])
+
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
+      setMyNfts(items);
+    })
+  }, [])
+
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground10} />
-      <AuthorProfileCard />
+      <AuthorProfileCard currentAccount={currentAccount}/>
       <AuthorTaps
         setCollectables={setCollectables}
         setCreated={setCreated}
@@ -53,6 +72,8 @@ const author = () => {
         like={like}
         follower={follower}
         following={following}
+        nfts={nfts}
+        myNfts={myNfts}
       />
       <Title
         heading="Popular Creators"

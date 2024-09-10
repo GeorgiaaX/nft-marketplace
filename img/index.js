@@ -47,6 +47,7 @@ import provider1 from "./metamaskLogo.png";
 import provider2 from "./walletconnect.png";
 import provider3 from "./FortmaticLogo.png";
 import provider4 from "./coinbasewalletLogo.png";
+import loader from "./animated_loader.gif"
 
 
 export default {
@@ -98,5 +99,6 @@ export default {
   vimeo,
   youtube,
   zgcmq,
-  earn
+  earn,
+  loader
 };

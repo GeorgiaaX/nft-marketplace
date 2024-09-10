@@ -4,6 +4,7 @@ import { MdVerified } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 
 import Style from "./FollowerTabCard.module.css";
+import images from "../../../img";
 
 const FollowerTabCard = ({ i, el }) => {
   const [following, setFollowing] = useState(false);
@@ -28,7 +29,7 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.followerTabCard_box_img}>
           <Image
             className={Style.followerTabCard_box_img_img}
-            src={el.background}
+            src={el.background || images.creatorbackground1}
             alt="profile background"
             width={300}
             height={300}
@@ -38,7 +39,7 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.followerTabCard_box_profile}>
           <Image
             className={Style.followerTabCard_box_profile_img}
-            src={el.user}
+            src={el.user || images.user1}
             alt="profile picture"
             width={80}
             height={80}
@@ -48,12 +49,12 @@ const FollowerTabCard = ({ i, el }) => {
         <div className={Style.followerTabCard_box_info}>
           <div className={Style.followerTabCard_box_info_name}>
             <h4>
-              Giada Mann{" "}
+              Ghanda Mussan {" "}
               <span>
                 <MdVerified />
               </span>
             </h4>
-            <p>12.321 ETH</p>
+            <p>{el.total || 0} ETH</p>
           </div>
 
           <div className={Style.followerTabCard_box_info_following}>

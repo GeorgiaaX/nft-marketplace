@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Style from "../styles/index.module.css";
 import {
@@ -15,10 +15,28 @@ import {
   Slider,
   FollowerTab,
   Brand,
-  Video
+  Video,
 } from "@/components/componentsindex";
+import { NFTMarketplaceContext } from "@/Context/NFTMarketplaceContext";
 
 const Home = () => {
+  const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
+
+  useEffect(() => {
+    checkIfWalletConnected();
+  }, []);
+
+  const { fetchNFTs } = useContext(NFTMarketplaceContext);
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
+  useEffect(() => {
+    fetchNFTs().then((item) => {
+      setNfts(item.reverse());
+      setNftsCopy(item);
+    });
+  }, []);
+
   return (
     <div className={Style.homePage}>
       <HeroSection />
@@ -37,7 +55,7 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life"
       />
       <Filter />
-      <NFTCard />
+      <NFTCard NFTData={nfts}/>
       <Title
         heading="Browse By Category"
         paragraph="Explore the NFTs in the most featured categories."
